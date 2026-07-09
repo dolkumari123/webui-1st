@@ -3,48 +3,201 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My First Web Page</title>
+    <title>Harbor Library Management</title>
     <link rel="stylesheet" href="#stye.css" />
   </head>
   <body>
-    <header class="hero">
-      <div class="hero__content">
-        <p class="eyebrow">WELCOME</p>
-        <h1>Build something beautiful.</h1>
-        <p>
-          This page was created as a clean starter layout with responsive design
-          and a polished look.
-        </p>
-        <div class="hero__actions">
-          <a class="btn btn-primary" href="#about">Learn more</a>
-          <a class="btn btn-secondary" href="#contact">Contact</a>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="brand__icon">📚</div>
+          <div>
+            <h2>Harbor Library</h2>
+            <p>Management System</p>
+          </div>
         </div>
-      </div>
-    </header>
 
-    <main>
-      <section id="about" class="section">
-        <h2>Why this works</h2>
-        <div class="cards">
-          <article class="card">
-            <h3>Simple</h3>
-            <p>Easy to read, easy to edit, and ready for your next idea.</p>
-          </article>
-          <article class="card">
-            <h3>Responsive</h3>
-            <p>The layout adjusts smoothly for phones, tablets, and desktops.</p>
-          </article>
-          <article class="card">
-            <h3>Modern</h3>
-            <p>Clean colors, spacing, and buttons give it a professional feel.</p>
-          </article>
+        <nav class="nav-links">
+          <a class="nav-link active" href="#">Dashboard</a>
+          <a class="nav-link" href="#">Books</a>
+          <a class="nav-link" href="#">Members</a>
+          <a class="nav-link" href="#">Reports</a>
+          <a class="nav-link" href="#">Settings</a>
+        </nav>
+
+        <div class="sidebar-card">
+          <h3>Need a quick update?</h3>
+          <p>Track arrivals, returns, and overdue books from one modern dashboard.</p>
+          <button type="button">+ Add Book</button>
         </div>
-      </section>
+      </aside>
 
-      <section id="contact" class="section section--accent">
-        <h2>Ready to start?</h2>
-        <p>Replace this content with your own project details and keep building.</p>
-      </section>
-    </main>
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Library Operations</p>
+            <h1>Welcome back, Admin</h1>
+            <p class="topbar__subtitle">Manage books, track borrowing activity, and keep your library running smoothly.</p>
+          </div>
+          <div class="topbar__actions">
+            <label class="search-box" for="searchInput">
+              <span>🔍</span>
+              <input id="searchInput" type="search" placeholder="Search by title or author" />
+            </label>
+            <button class="ghost-btn" type="button">Export</button>
+          </div>
+        </header>
+
+        <section class="hero-banner">
+          <div>
+            <p class="eyebrow">Smart Library Control</p>
+            <h2>Run your library with clarity, speed, and confidence.</h2>
+            <p>Organize collections, monitor returns, and deliver a seamless experience for every member.</p>
+            <div class="hero-banner__actions">
+              <button class="primary-btn" type="button">View Inventory</button>
+              <button class="ghost-btn" type="button">View Reports</button>
+            </div>
+          </div>
+          <div class="hero-banner__card">
+            <h3>Today’s Focus</h3>
+            <ul>
+              <li>12 books are due today</li>
+              <li>3 new memberships pending</li>
+              <li>1 special collection request</li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="stats-grid">
+          <article class="stat-card">
+            <p>Total Books</p>
+            <h3>1,248</h3>
+            <span>+24 this month</span>
+          </article>
+          <article class="stat-card">
+            <p>Borrowed</p>
+            <h3>318</h3>
+            <span>12 due today</span>
+          </article>
+          <article class="stat-card">
+            <p>Members</p>
+            <h3>842</h3>
+            <span>+18 new</span>
+          </article>
+          <article class="stat-card">
+            <p>Overdue</p>
+            <h3>27</h3>
+            <span>Needs attention</span>
+          </article>
+        </section>
+
+        <section class="panel">
+          <div class="panel__header">
+            <div>
+              <p class="eyebrow">Catalog</p>
+              <h2>Book Inventory</h2>
+            </div>
+            <button class="primary-btn" type="button">+ New Book</button>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Author</th>
+                  <th>Category</th>
+                  <th>Status</th>
+                  <th>Due</th>
+                </tr>
+              </thead>
+              <tbody id="bookTableBody">
+                <tr>
+                  <td>Atomic Habits</td>
+                  <td>James Clear</td>
+                  <td>Self-Help</td>
+                  <td><span class="status available">Available</span></td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Deep Work</td>
+                  <td>Cal Newport</td>
+                  <td>Productivity</td>
+                  <td><span class="status borrowed">Borrowed</span></td>
+                  <td>Jul 12</td>
+                </tr>
+                <tr>
+                  <td>Thinking, Fast and Slow</td>
+                  <td>Daniel Kahneman</td>
+                  <td>Psychology</td>
+                  <td><span class="status available">Available</span></td>
+                  <td>—</td>
+                </tr>
+                <tr>
+                  <td>Becoming</td>
+                  <td>Michelle Obama</td>
+                  <td>Biography</td>
+                  <td><span class="status overdue">Overdue</span></td>
+                  <td>Jul 03</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="bottom-grid">
+          <article class="panel">
+            <div class="panel__header">
+              <div>
+                <p class="eyebrow">Activity</p>
+                <h2>Recent Activity</h2>
+              </div>
+            </div>
+            <ul class="activity-list">
+              <li><span class="dot green"></span> A new book was added to the fiction section.</li>
+              <li><span class="dot blue"></span> 5 members returned books before the due date.</li>
+              <li><span class="dot amber"></span> 2 overdue notices were sent this morning.</li>
+            </ul>
+          </article>
+
+          <article class="panel">
+            <div class="panel__header">
+              <div>
+                <p class="eyebrow">Members</p>
+                <h2>Recently Active</h2>
+              </div>
+            </div>
+            <div class="member-list">
+              <div class="member-item">
+                <strong>Rita Shrestha</strong>
+                <span>Returned 2 books</span>
+              </div>
+              <div class="member-item">
+                <strong>Samir Karki</strong>
+                <span>Borrowed 1 book</span>
+              </div>
+              <div class="member-item">
+                <strong>Nisha Bajracharya</strong>
+                <span>Requested a renewal</span>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      const searchInput = document.getElementById('searchInput');
+      const rows = document.querySelectorAll('#bookTableBody tr');
+
+      searchInput.addEventListener('input', () => {
+        const query = searchInput.value.toLowerCase();
+
+        rows.forEach((row) => {
+          const text = row.textContent.toLowerCase();
+          row.style.display = text.includes(query) ? '' : 'none';
+        });
+      });
+    </script>
   </body>
 </html>
