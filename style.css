@@ -157,6 +157,8 @@ input {
 
 .main-content {
   padding: 2rem 2.2rem 2.5rem;
+  max-width: 1280px;
+  margin: 0 auto;
 }
 
 .topbar {
@@ -169,6 +171,7 @@ input {
   align-items: center;
   gap: 1rem;
   margin-bottom: 1.4rem;
+  padding: 0.2rem 0;
 }
 
 .eyebrow {
@@ -181,9 +184,10 @@ input {
 
 .topbar h1 {
   margin: 0;
-  font-size: 2.2rem;
+  font-size: 2.35rem;
   color: #5a3a1d;
   font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .topbar__subtitle {
@@ -235,14 +239,14 @@ input {
   grid-template-columns: 1.4fr 0.8fr;
   gap: 1.25rem;
   margin-bottom: 1.4rem;
-  padding: 2rem 2.2rem;
-  border-radius: 28px;
-  min-height: 330px;
+  padding: 2.2rem 2.4rem;
+  border-radius: 30px;
+  min-height: 360px;
   position: relative;
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(255, 197, 87, 0.36), rgba(168, 108, 60, 0.2));
+  background: linear-gradient(135deg, rgba(255, 197, 87, 0.4), rgba(168, 108, 60, 0.2));
   border: 1px solid rgba(122, 73, 39, 0.12);
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.12);
 }
 
 .hero-banner::before,
@@ -272,7 +276,7 @@ input {
 
 .hero-banner h2 {
   margin: 0.2rem 0 0.55rem;
-  font-size: 2rem;
+  font-size: 2.1rem;
   line-height: 1.2;
   color: #53341a;
 }
@@ -334,6 +338,7 @@ input {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1.2rem;
   margin-bottom: 1.4rem;
+  align-items: stretch;
 }
 
 .stat-card,
@@ -343,6 +348,12 @@ input {
   border-radius: 20px;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
   backdrop-filter: blur(10px);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.panel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.1);
 }
 
 .stat-card {
@@ -511,9 +522,11 @@ th {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  padding: 1.2rem 1.3rem;
+  padding: 1.35rem 1.45rem;
   margin-top: 0.4rem;
   background: linear-gradient(135deg, rgba(166, 103, 43, 0.12), rgba(255, 197, 87, 0.16));
+  border: 1px solid rgba(122, 73, 39, 0.1);
+  border-radius: 22px;
 }
 
 .welcome-footer h2 {
