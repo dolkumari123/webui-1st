@@ -19,7 +19,10 @@
 body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: radial-gradient(circle at top left, #122a46 0%, #07111f 45%, #050b14 100%);
+  background:
+    radial-gradient(circle at top left, rgba(79, 140, 255, 0.35), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(124, 77, 255, 0.28), transparent 24%),
+    linear-gradient(135deg, #07111f 0%, #0b1730 45%, #050b14 100%);
   color: var(--text);
   min-height: 100vh;
   line-height: 1.5;
@@ -37,10 +40,11 @@ input {
 }
 
 .sidebar {
-  background: rgba(7, 17, 31, 0.96);
+  background: rgba(7, 17, 31, 0.94);
   padding: 1.75rem;
   border-right: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(18px);
+  box-shadow: 8px 0 30px rgba(0, 0, 0, 0.18);
 }
 
 .brand {
@@ -82,22 +86,25 @@ input {
   text-decoration: none;
   padding: 0.95rem 1rem;
   border-radius: 10px;
-  transition: background 0.2s ease, color 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
   font-weight: 600;
   font-size: 0.98rem;
 }
 
 .nav-link:hover,
 .nav-link.active {
-  background: rgba(79, 140, 255, 0.16);
+  background: linear-gradient(135deg, rgba(79, 140, 255, 0.18), rgba(124, 77, 255, 0.16));
   color: var(--text);
+  transform: translateX(3px);
 }
 
 .sidebar-card {
   margin-top: 2rem;
   padding: 1rem;
-  border-radius: 16px;
+  border-radius: 18px;
   background: linear-gradient(135deg, rgba(79, 140, 255, 0.2), rgba(124, 77, 255, 0.2));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.16);
 }
 
 .sidebar-card h3 {
@@ -116,19 +123,28 @@ input {
 .ghost-btn {
   border: none;
   border-radius: 999px;
-  padding: 0.7rem 1rem;
+  padding: 0.72rem 1rem;
   cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
 }
 
 .sidebar-card button,
 .primary-btn {
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   color: white;
+  box-shadow: 0 8px 18px rgba(79, 140, 255, 0.24);
+}
+
+.sidebar-card button:hover,
+.primary-btn:hover,
+.ghost-btn:hover {
+  transform: translateY(-2px);
 }
 
 .ghost-btn {
   background: rgba(255, 255, 255, 0.08);
   color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .main-content {
@@ -206,11 +222,38 @@ input {
   gap: 1.25rem;
   margin-bottom: 1.4rem;
   padding: 2rem 2.2rem;
-  border-radius: 24px;
-  min-height: 320px;
-  background: linear-gradient(135deg, rgba(79, 140, 255, 0.24), rgba(124, 77, 255, 0.2));
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
+  border-radius: 28px;
+  min-height: 330px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(79, 140, 255, 0.26), rgba(124, 77, 255, 0.2));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.24);
+}
+
+.hero-banner::before,
+.hero-banner::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(2px);
+  pointer-events: none;
+}
+
+.hero-banner::before {
+  width: 220px;
+  height: 220px;
+  right: -50px;
+  top: -30px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.hero-banner::after {
+  width: 160px;
+  height: 160px;
+  left: -40px;
+  bottom: -40px;
+  background: rgba(38, 194, 129, 0.16);
 }
 
 .hero-banner h2 {
@@ -250,11 +293,12 @@ input {
 }
 
 .hero-banner__card {
-  background: rgba(7, 17, 31, 0.78);
+  background: rgba(7, 17, 31, 0.8);
   padding: 1.2rem;
-  border-radius: 16px;
+  border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   align-self: center;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .hero-banner__card h3 {
@@ -281,12 +325,19 @@ input {
 .panel {
   background: rgba(16, 28, 49, 0.95);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 18px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
+  border-radius: 20px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(10px);
 }
 
 .stat-card {
   padding: 1.2rem 1.25rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(79, 140, 255, 0.16);
 }
 
 .stat-card p {
@@ -322,14 +373,16 @@ input {
 .gallery-card {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 16px;
-  padding: 0.9rem;
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  border-radius: 18px;
+  padding: 0.95rem;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
 .gallery-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
   border-color: rgba(79, 140, 255, 0.4);
+  box-shadow: 0 14px 30px rgba(79, 140, 255, 0.16);
 }
 
 .gallery-card__image {
