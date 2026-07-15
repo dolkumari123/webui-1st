@@ -465,6 +465,52 @@ th {
   margin-bottom: 1.2rem;
 }
 
+.location-card {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.location-map {
+  min-height: 180px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(79, 140, 255, 0.3), rgba(38, 194, 129, 0.25));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.location-map::before,
+.location-map::after {
+  content: "";
+  position: absolute;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.location-map::before {
+  width: 220px;
+  height: 220px;
+  top: -40px;
+  left: -50px;
+}
+
+.location-map::after {
+  width: 140px;
+  height: 140px;
+  bottom: -30px;
+  right: -20px;
+}
+
+.map-pin {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.2rem;
+}
+
 .address-box {
   padding: 0.9rem 1rem;
   border-radius: 14px;
@@ -479,6 +525,35 @@ th {
 
 .address-box strong {
   color: var(--text);
+}
+
+.login-panel {
+  margin-bottom: 1.2rem;
+}
+
+.login-form {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.login-form label {
+  display: grid;
+  gap: 0.4rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.login-form input {
+  padding: 0.75rem 0.9rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: var(--accent);
 }
 
 @media (max-width: 1024px) {
