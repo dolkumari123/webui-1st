@@ -19,7 +19,7 @@
 body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #07111f, #0f213a);
+  background: radial-gradient(circle at top left, #122a46 0%, #07111f 45%, #050b14 100%);
   color: var(--text);
   min-height: 100vh;
 }
@@ -36,9 +36,10 @@ input {
 }
 
 .sidebar {
-  background: rgba(7, 17, 31, 0.95);
+  background: rgba(7, 17, 31, 0.96);
   padding: 1.5rem;
   border-right: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
 }
 
 .brand {
@@ -78,9 +79,10 @@ input {
 .nav-link {
   color: var(--muted);
   text-decoration: none;
-  padding: 0.8rem 0.9rem;
+  padding: 0.85rem 1rem;
   border-radius: 10px;
   transition: background 0.2s ease, color 0.2s ease;
+  font-weight: 600;
 }
 
 .nav-link:hover,
@@ -162,6 +164,13 @@ input {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.topbar__actions .primary-btn,
+.topbar__actions .ghost-btn {
+  white-space: nowrap;
 }
 
 .search-box {
@@ -188,10 +197,11 @@ input {
   grid-template-columns: 1.4fr 0.8fr;
   gap: 1rem;
   margin-bottom: 1.2rem;
-  padding: 1.2rem;
-  border-radius: 22px;
-  background: linear-gradient(135deg, rgba(79, 140, 255, 0.2), rgba(124, 77, 255, 0.18));
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1.3rem;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(79, 140, 255, 0.24), rgba(124, 77, 255, 0.2));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.2);
 }
 
 .hero-banner h2 {
@@ -211,8 +221,26 @@ input {
   margin-top: 1rem;
 }
 
+.hero-banner__meta {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 0.9rem;
+}
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+
 .hero-banner__card {
-  background: rgba(7, 17, 31, 0.72);
+  background: rgba(7, 17, 31, 0.78);
   padding: 1rem;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -240,7 +268,7 @@ input {
 
 .stat-card,
 .panel {
-  background: var(--panel);
+  background: rgba(16, 28, 49, 0.95);
   border: 1px solid rgba(255, 255, 255, 0.06);
   border-radius: 18px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
@@ -395,6 +423,16 @@ th {
   .sidebar {
     border-right: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .topbar__actions {
+    width: 100%;
+    justify-content: flex-start;
   }
 
   .topbar,
