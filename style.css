@@ -1,15 +1,15 @@
 ﻿:root {
   color-scheme: dark;
-  --bg: #07111f;
-  --panel: #101c31;
-  --panel-2: #16253f;
-  --text: #f4f7fb;
-  --muted: #8ea0bc;
-  --accent: #4f8cff;
-  --accent-2: #7c4dff;
-  --success: #26c281;
-  --warning: #ffb84d;
-  --danger: #ff6b6b;
+  --bg: #f8f3e8;
+  --panel: #fffaf1;
+  --panel-2: #f2e4ca;
+  --text: #2f2418;
+  --muted: #7b6548;
+  --accent: #a6672b;
+  --accent-2: #7b4b2e;
+  --success: #2e8b57;
+  --warning: #d79a2b;
+  --danger: #c95d4f;
 }
 
 * {
@@ -20,9 +20,15 @@ body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background:
-    radial-gradient(circle at top left, rgba(255, 197, 87, 0.22), transparent 24%),
-    radial-gradient(circle at bottom right, rgba(124, 77, 255, 0.16), transparent 20%),
-    linear-gradient(135deg, #f7efe2 0%, #f2e4ca 45%, #e7d5b3 100%);
+    radial-gradient(circle at top left, rgba(255, 197, 87, 0.26), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(166, 103, 43, 0.16), transparent 22%),
+    linear-gradient(135deg, #fdf7eb 0%, #f4ead5 48%, #e9d7b4 100%);
+  background-image:
+    linear-gradient(rgba(120, 78, 41, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 78, 41, 0.06) 1px, transparent 1px),
+    radial-gradient(circle at 20% 20%, rgba(166, 103, 43, 0.08), transparent 20%),
+    radial-gradient(circle at 80% 20%, rgba(120, 78, 41, 0.08), transparent 22%);
+  background-size: 24px 24px, 24px 24px, auto, auto;
   color: #2f2418;
   min-height: 100vh;
   line-height: 1.5;
@@ -40,7 +46,7 @@ input {
 }
 
 .sidebar {
-  background: rgba(70, 44, 21, 0.96);
+  background: linear-gradient(180deg, #5f3f24 0%, #4a2f1a 100%);
   padding: 1.75rem;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(18px);
@@ -204,7 +210,7 @@ input {
   display: flex;
   align-items: center;
   gap: 0.55rem;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.82);
   border: 1px solid rgba(122, 73, 39, 0.16);
   border-radius: 999px;
   padding: 0.8rem 1rem;
@@ -332,8 +338,8 @@ input {
 
 .stat-card,
 .panel {
-  background: rgba(255, 250, 242, 0.9);
-  border: 1px solid rgba(122, 73, 39, 0.1);
+  background: rgba(255, 252, 247, 0.95);
+  border: 1px solid rgba(122, 73, 39, 0.12);
   border-radius: 20px;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
   backdrop-filter: blur(10px);
