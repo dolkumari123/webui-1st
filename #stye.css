@@ -330,15 +330,21 @@ input {
 }
 
 .image-one {
-  background: linear-gradient(135deg, rgba(79, 140, 255, 0.6), rgba(124, 77, 255, 0.5)), url('https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=900&q=80');
+  background: linear-gradient(135deg, rgba(79, 140, 255, 0.25), rgba(124, 77, 255, 0.2)), url('./assets/modern-classics.svg');
+  background-size: cover;
+  background-position: center;
 }
 
 .image-two {
-  background: linear-gradient(135deg, rgba(38, 194, 129, 0.6), rgba(79, 140, 255, 0.5)), url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=900&q=80');
+  background: linear-gradient(135deg, rgba(38, 194, 129, 0.25), rgba(79, 140, 255, 0.2)), url('./assets/knowledge-hub.svg');
+  background-size: cover;
+  background-position: center;
 }
 
 .image-three {
-  background: linear-gradient(135deg, rgba(255, 184, 77, 0.6), rgba(255, 107, 107, 0.5)), url('https://images.unsplash.com/photo-1495446815901-a7297e633e8d?auto=format&fit=crop&w=900&q=80');
+  background: linear-gradient(135deg, rgba(255, 184, 77, 0.25), rgba(255, 107, 107, 0.2)), url('./assets/creative-minds.svg');
+  background-size: cover;
+  background-position: center;
 }
 
 .gallery-card h3 {
