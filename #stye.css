@@ -177,11 +177,12 @@ input {
   display: flex;
   align-items: center;
   gap: 0.55rem;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(79, 140, 255, 0.35);
   border-radius: 999px;
-  padding: 0.7rem 0.9rem;
-  min-width: 280px;
+  padding: 0.75rem 1rem;
+  min-width: 320px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
 }
 
 .search-box input {
@@ -190,6 +191,10 @@ input {
   background: transparent;
   color: var(--text);
   width: 100%;
+}
+
+.search-box input::placeholder {
+  color: var(--muted);
 }
 
 .hero-banner {
